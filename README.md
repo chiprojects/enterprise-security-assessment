@@ -1,6 +1,6 @@
 # Enterprise Security Assessment- Financial Services Environment 
 
-For this project, as an external cybersecurity consultant, I was tasked with evaluating the network exposure, vulnerability posture, and security monitoring capabilities of a regional financial institution operating within a Windows/Linux enterprise environment.
+As an external cybersecurity consultant, I was hired to evaluate the network exposure, vulnerability posture, and monitoring capabilities of a regional financial institution operating within a Windows/Linux enterprise environment.
 
 The objective of this engagement was to:
 
@@ -8,13 +8,46 @@ The objective of this engagement was to:
 
 - **Conduct credentialed vulnerability scanning**
 
-- **Analyze severity using CVSS and risk-based prioritization**
+- **Analyze vulnerabilities using CVSS risk scoring**
 
-- **Evaluate logging and monitoring visibility**
+- **Evaluate security monitoring capabilities**
 
-- **Provide remediation guidance aligned with security best practices**
+- **Provide risk-based remediation guidance**
 
-This assessment was conducted in an authorized simulated enterprise environment designed to mirror real-world financial sector infrastructure.
+This assessment was conducted within an authorized simulated enterprise environment designed to mirror real-world financial sector infrastructure.
+
+# Executive Summary
+
+A vulnerability assessment was conducted against the internal network `10.11.152.0/24` to evaluate the organization's security posture and identify exploitable weaknesses.
+
+Network enumeration identified 2 active hosts, with one host exposing remote access services, including **SSH(TCP port 22)** and **RDP(TCP port 3389).**
+
+Credentialed vulnerability scanning identified a total of **127 vulnerabilities**: 
+
+- 🔴4 Critical
+- ⭕10 High
+- 🟠19 Medium
+- 🟡1 Low
+
+The most severe findings included **Apache Log4j Remote Code Execution vulnerabilities**, outdated **OpenJDK installations**, and weak **SSL/TLS configurations.**
+
+<ins>These vulnerabilities present a high risk of:</ins>
+
+- Credential interception
+
+- Remote code execution
+
+- Lateral movement within the network
+
+- Unauthorized system access
+
+Immediate remediation was recommended for all **critical** and **high-severity vulnerabilities**, particularly those affecting publicly exposed services.
+
+# Assessment Methodology
+
+
+
+
 
 # 📍Phase 1 - Vulnerability Assessment 
 
