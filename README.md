@@ -89,6 +89,11 @@ Findings were evaluated using:
 
 - **Mapping to NIST SP 800--53 control families**
 
+**Tools Used:**
+
+- Nmap
+- Nessus Essentials
+- Kali Linux
 
 # 📍Phase 1 - Vulnerability Assessment 
 
@@ -111,6 +116,17 @@ Two open ports identified:
 | ---- | ------- | ------- 
 | 22   |  SSH    | OpenSSH 9.9p1 Debian 3 (protocol 2.0)
 | 3389 |  ms-wbt-server    | Microsoft Terminal Services
+
+<img width="651" height="438" alt="image" src="https://github.com/user-attachments/assets/ab7f2d7d-3728-436d-9117-efe428d2214f" />
+#
+
+**<ins>Attack Surface Analysis</ins>**
+
+The presence of these exposed **remote access services** increases the organization's attack surface by introducing the following risks: 
+
+- Brute-force credentialed attacks
+- Remote exploitation of vulnerable services
+- Lateral movement across systems
 #
 
 <ins>**Vulnerability Assessment (Nessus Findings)**</ins>
@@ -181,7 +197,6 @@ These weak configurations reduce overall system security and could assist attack
 #
 
 
-
 #### 🟡Low Vulnerabilities
 
 - OpenJDK 8 <=8u402/11.0.0
@@ -189,12 +204,39 @@ These weak configurations reduce overall system security and could assist attack
 ![image](https://github.com/user-attachments/assets/e9920ece-78cd-497c-b9d8-9b9ea196b368)
 
 This outdated software can increase long-term risk if left unpatched.
-#
 
-# Security Control Gap Analysis
-Assessment findings were mapped to **NIST SP 800-53 Rev.5 controls.**
+# Risk Priorization
+Based on CVSS severity, exposure surface, and exploit vulnerability, the following remediation priorities were identified: 
 
-<img width="916" height="487" alt="image" src="https://github.com/user-attachments/assets/e4837728-cf5c-4da4-a261-c9f1dfe49daa" />
+Immediate Remediation (Critical)
+
+- Apache Log4j Remote Code Execution vulnerabilities
+- All exposed RDP services without access management
+
+High Priority
+
+- Outdated OpenJDK installations
+- Python Tornado DoS vulnerability
+
+Medium Priority
+
+- SSL certificate trust issues
+- Anonymous cipher suites
+
+# Remediation Recommendations
+Key remediation actions include:
+
+- Patch vulnerable Apache Log4j components immediately
+- Upgrade Apache to version > 2.4.52
+- Upgrade all outdated OpenJDK installations
+- Restrict RDP access via VPN
+- Harden SSH configurations
+- Implement multi-factor authentication for all admin accounts
+- Implement continuous monitoring via regular vulnerability assessments
+
+
+
+
 
 
 
