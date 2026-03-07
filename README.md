@@ -16,6 +16,16 @@ The objective of this engagement was to:
 
 This assessment was conducted within an authorized simulated enterprise environment designed to mirror real-world financial sector infrastructure.
 
+# Table of Contents
+
+- [Executive Summary](#executive-summary)
+- [Assessment Methodology: Phase 1: Vulnerability Assessment](#assessment-methodology)
+- [Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)
+- [Risk Priorization](#risk-priorization)
+- [Remediation Recommendations](#remediation-recommendations)
+- [Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)
+
+
 # Executive Summary
 
 A vulnerability assessment was conducted against the internal network `10.11.152.0/24` to evaluate the organization's security posture and identify exploitable weaknesses.
@@ -95,7 +105,7 @@ Findings were evaluated using:
 - Nessus Essentials
 - Kali Linux
 
-# 📍Phase 1 - Vulnerability Assessment 
+# 📍Phase 1: Vulnerability Assessment 
 
 <ins>**Network Enumeration (Nmap Findings)**</ins>
 
@@ -235,7 +245,7 @@ Key remediation actions include:
 - Implement continuous monitoring via regular vulnerability assessments
 
 
-# 📍Phase 2 - Security Monitoring and Log Analysis
+# 📍Phase 2: Security Monitoring and Log Analysis
 
 ### Engagement Objective
 
