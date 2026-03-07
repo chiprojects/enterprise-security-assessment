@@ -1,6 +1,6 @@
 # Enterprise Security Assessment- Financial Services Environment 
 
-As an external cybersecurity consultant, I was hired to evaluate the network exposure, vulnerability posture, and monitoring capabilities of a regional financial institution operating within a Windows/Linux enterprise environment.
+As an external cybersecurity consultant, I was hired to evaluate the network exposure, vulnerability posture, and monitoring capabilities of a regional financial institution: NextTech, operating within a Windows/Linux enterprise environment.
 
 The objective of this engagement was to:
 
@@ -117,7 +117,7 @@ Two open ports identified:
 | 22   |  SSH    | OpenSSH 9.9p1 Debian 3 (protocol 2.0)
 | 3389 |  ms-wbt-server    | Microsoft Terminal Services
 
-<img width="651" height="438" alt="image" src="https://github.com/user-attachments/assets/ab7f2d7d-3728-436d-9117-efe428d2214f" />
+![image](https://github.com/user-attachments/assets/ab7f2d7d-3728-436d-9117-efe428d2214f)
 #
 
 **<ins>Attack Surface Analysis</ins>**
@@ -235,6 +235,93 @@ Key remediation actions include:
 - Implement continuous monitoring via regular vulnerability assessments
 
 
+# 📍Phase 2 - Security Monitoring and Log Analysis
+
+### Engagement Objective
+
+Following the vulnerability assessment conducted in Phase 1, NextTech requested an evaluation of its security monitoring capabilities to determine whether the organization could detect malicious activity targeting its infrastructure.
+
+The objective of this phase was to: 
+
+- Assess the maturity of NextTech's **security monitoring and detection capabilities**
+- Determine whether security logs could be **queried for threat indicators**
+- Evaluate the organization's ability to **collect security monitoring data**
+- Identify **potential indicators of compromise IoCs** in web server activity
+
+Log data from multiple sources was analyzed to determine whether suspicious activity targeting the organization's web infrastructure could be identified.
+#
+
+### Log Sources Analyzed
+
+Three log datasets representing web server activity were analyzed:
+
+| Log Source | Description
+| -------- | ------- 
+| Access-1.log   |  HTTP access log containing web request activity 
+| Apache_logs.log |  Apache web server activity logs   
+| Access-2.log | Additional HTTP request logs used for anomaly analysis
+
+These logs provided visibility into: 
+
+- Client IP addresses
+- HTTP methods
+- Response Status Codes
+- User Agent Strings
+- Requested Resources
+#
+
+### Analysis Methodology 
+
+Log analysis was conducted using standard command-line investigation techniques commonly used during incident response and threat hunting.
+
+Because the environment lacked a centralized SIEM platform, log analysis relied on manual parsing and pattern detection.
+
+**Tools Used:**
+
+- Linux shell utilities
+- Pattern matching techniques
+- Manual review of suspicious entries
+
+**<ins>Key commands used during analysis included:</ins>**
+
+- `grep`
+- `awk`
+- `sort`
+- `uniq`
+- `wc`
+
+These utilities allowed our analysts to efficiently query large log files and identify patterns associated with malicious activity.
+#
+
+### Key Findings
+
+#### Access-1.log Analysis
+
+The first dataset revealed several indicators associated with scanning activity and potential exploit attempts
+
+
+| Indicator | Result
+| -------- | ------- 
+| GET Requests Logged  |  130 
+| Unique HTTP Status Codes |  7  
+| HTTP Tunneling Attempts (CONNECT)| 10
+| Invalid Binary Request Lines |  60
+| Unique User Agents |  55 
+| Firefox Requests| 11
+
+Several requests contained invalid request lines with raw binary data, which are often associated with
+
+- vulnerability scanners
+- automated reconnaissance tools
+- TLS handshake attempts against non-TLS ports
+
+#### Exploitation Attempts Identified
+
+Two requests attempting to exploit:
+
+`CVE-2020-8515`
+
+were detected in the log data. This vulnerability has historically been targeted in attacks against network devices and web services.
 
 
 
