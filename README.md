@@ -20,10 +20,10 @@ This assessment was conducted within an authorized simulated enterprise environm
 
 - [Executive Summary](#executive-summary)
 - [Assessment Methodology: Phase 1: Vulnerability Assessment](#assessment-methodology)
-- [Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)
+- **[Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)**
 - [Risk Priorization](#risk-priorization)
 - [Remediation Recommendations](#remediation-recommendations)
-- [Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)
+- **[Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)**
 
 
 # Executive Summary
