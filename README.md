@@ -28,7 +28,7 @@ This assessment was conducted within an authorized simulated enterprise environm
 - [Key Findings](#key-findings)
 - [Security Monitoring Observations](#security-monitoring-observations)
 - [Recommendations](#recommendations)
-- **[Phase 3: Securing Monitoring and Log Analysis](#security-monitoring-and-log-analysis)**
+- **[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#incident-investigation-and-indicators-of-compromise-analysis)**
 
 
 # Executive Summary
@@ -465,7 +465,7 @@ Detection rules should be created to identify:
 - Suspicious user agent patterns
 
 
-# 📍Phase 3: Security Monitoring and Log Analysis
+# 📍Phase 3: Incident Investigation and Indicators of Compromise Analysis
 
 ### Engagement Objective
 
