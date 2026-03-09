@@ -305,7 +305,7 @@ These utilities allowed our analysts to efficiently query large log files and id
 
 ### Key Findings
 
-#### Access-1.log Analysis
+#### <ins>Access-1.log Analysis</ins>
 
 The first dataset revealed several indicators associated with scanning activity and potential exploit attempts
 
@@ -325,15 +325,113 @@ Several requests contained invalid request lines with raw binary data, which are
 - automated reconnaissance tools
 - TLS handshake attempts against non-TLS ports
 
-#### Exploitation Attempts Identified
+##### ⚠️Exploitation Attempts Identified
 
 Two requests attempting to exploit:
 
 `CVE-2020-8515`
 
 were detected in the log data. This vulnerability has historically been targeted in attacks against network devices and web services.
+#
+
+#### <ins>Apache Web Server Log Analysis</ins>
+Analysis of the Apache web server logs revealed significant web traffic activity.
 
 
+| Metric | Result
+| -------- | ------- 
+| Total Log Entries |  606 
+| Unique Source IPs |  124  
+| Most Active IP Address| 65.55.213.73
+| Most Requested Resource |  /favicon.ico
+| Successful HTTP Responses(200) | 526
+
+The high number of successful HTTP responses indicates that the server is actively servicing requests from a wide range of external hosts.
+#
+
+#### <ins>Access-2.log Analysis</ins>
+The final log dataset revealed additional activity related to potential reconnaissance and automated scanning.
+
+| Indicator | Result
+| -------- | ------- 
+| GET Requests|  60
+| Unique Source IP Addresses |  48  
+| Successful Responses(200)| 19
+| Client Errors(400) |  16
+
+##### ⚠️First Connection Observed
+
+The first request reaching the server originated from:
+
+`104.245.97.236`
+
+The high number of successful HTTP responses indicates that the server is actively servicing requests from a wide range of external hosts.
+
+##### ⚠️Bot Activity Detected
+
+Automated web crawler activity was identified.
+
+| Bot       | Version       |
+| --------- | ------------- |
+| Googlebot | Googlebot/2.1 |
+
+The presence of search engine bots demonstrates that the system is visible to automated internet crawlers.
+
+
+##### ⚠️Shellshock Exploit Attempt
+
+Log analysis also identified an attempted exploitation of the Shellshock vulnerability. 
+
+Source IP:
+
+`61.161.130.241`
+
+Shellshock is a critical vulnerability that allows attackers to execute arbitrary commands on vulnerable systems via Bash.
+
+##### ⚠️Browser Activity Observed
+
+Analysis of user agent strings revealed the most frequently observed Firefox version:
+
+`Firefox/31.0`
+
+This browser version appeared **9 times** in the dataset.
+
+##### ⚠️Most Common HTTP Method
+
+The most frequently observed HTTP method was 
+
+`GET`
+
+with **60 total requests** recorded.
+#
+
+### Indicators of Suspicious Activity
+
+Several indicators suggest that the system may be targeted by automated scanning tools and reconnaissance activity:
+
+- Shellshock exploitation attempts
+- HTTP tunneling attempts using CONNECT requests
+- High number of requests from individual IP addresses
+- Exploit attempts targeting CVE-2020-8515
+- Malformed HTTP request lines containing binary data
+
+These system patterns are consistent with attacker behavior observed during reconnaissance and vulnerability scanning.
+
+### Security Monitoring Observations
+
+The assessment revealed that NextTech is capable of collecting log data; however, it lacks the tooling required to actively monitor or provide alerts on suspicious activity. 
+
+Limitations include:
+
+- No automated alerting capability
+- Manual log review required to detect threats
+- Absence of centralized log aggregation
+
+As a result of these limitations, potentially malicious activity may go undetected for extended periods of time.
+
+### Recommendations
+
+To improve detection capabilities, the following actions are recommended:
 
 
 
