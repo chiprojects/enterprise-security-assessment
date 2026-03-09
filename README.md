@@ -428,10 +428,27 @@ Limitations include:
 - Absence of centralized log aggregation
 
 As a result of these limitations, potentially malicious activity may go undetected for extended periods of time.
+#
 
 ### Recommendations
 
 To improve detection capabilities, the following actions are recommended:
+
+#### 🔑Deploy a SIEM Platform
+
+A security information and event management(SIEM) platform would allow the organization to:
+
+- Generate real-time security alerts
+- Detect suspicious activity automatically
+- Aggregate logs across systems
+
+#### 🔑Strengthen Network Infrastructure
+
+Firewall and intrusion detection/preventative rules should be implemented to block:
+
+- Exploit payload signatures
+- Known malicious IP addresses
+- Repeated scanning attempts
 
 
 
