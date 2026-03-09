@@ -28,7 +28,7 @@ This assessment was conducted within an authorized simulated enterprise environm
 - [Key Findings](#key-findings)
 - [Security Monitoring Observations](#security-monitoring-observations)
 - [Recommendations](#recommendations)
-- **[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#incident-investigation-and-indicators-of-compromise-analysis)**
+- **[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#phase-3-incident-investigation-and-indicators-of-compromise-analysis)**
 
 
 # Executive Summary
