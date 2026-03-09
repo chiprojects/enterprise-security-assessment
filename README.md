@@ -24,6 +24,11 @@ This assessment was conducted within an authorized simulated enterprise environm
 - [Risk Priorization](#risk-priorization)
 - [Remediation Recommendations](#remediation-recommendations)
 - **[Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)**
+- [Analysis Methodology](#analysis-methodology)
+- [Key Findings](#key-findings)
+- [Security Monitoring Observations](#security-monitoring-observations)
+- [Recommendations](#recommendations)
+- **[Phase 3: Securing Monitoring and Log Analysis](#security-monitoring-and-log-analysis)**
 
 
 # Executive Summary
@@ -450,5 +455,37 @@ Firewall and intrusion detection/preventative rules should be implemented to blo
 - Known malicious IP addresses
 - Repeated scanning attempts
 
+#### 🔑Implement Automated Detection Rules
 
+Detection rules should be created to identify: 
+
+- Exploit attempts targeting known (CVEs - Common Vulnerabilities & Exposures)
+- Malformed HTTP requests
+- Repeated requests from single IP addresses
+- Suspicious user agent patterns
+
+
+# 📍Phase 3: Security Monitoring and Log Analysis
+
+### Engagement Objective
+
+Following earlier findings of exposed services and suspicious log activity, NextTech reported multiple operational anomalies, including:
+
+- Systems rebooting without authorization
+- Files being renamed unexpectedly
+- Sudden performance slowdowns
+
+These events raised concerns that the organization may have experienced a security compromise.
+
+The objective of this phase was to conduct a preliminary digital forensics investigation to determine whether indicators of compromise (IoCs) could be identified within the organization's IT infrastructure.
+
+### Investigation Scope
+
+The investigation focused on analyzing forensic artifacts provided by the organization.
+
+
+| Artifact | Description
+| -------- | ------- 
+| `access-2.log`|  Web server access logs
+| NextTechartifact.pcap |  Packet capture containing network traffic 
 
