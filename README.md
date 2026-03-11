@@ -18,17 +18,17 @@ This assessment was conducted within an authorized simulated enterprise environm
 
 # Table of Contents
 
-- [Executive Summary](#executive-summary)
-- [Assessment Methodology: Phase 1: Vulnerability Assessment](#assessment-methodology)
-- **[Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)**
-- [Risk Priorization](#risk-priorization)
-- [Remediation Recommendations](#remediation-recommendations)
-- **[Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)**
-- [Analysis Methodology](#analysis-methodology)
-- [Key Findings](#key-findings)
-- [Security Monitoring Observations](#security-monitoring-observations)
-- [Recommendations](#recommendations)
-- **[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#phase-3-incident-investigation-and-indicators-of-compromise-analysis)**
+ - [Executive Summary](#executive-summary) <br>
+ - [Assessment Methodology](#assessment-methodology) <br>
+ - **📍[Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)** <br>
+ - [Risk Priorization](#risk-priorization) <br>
+ - [Remediation Recommendations](#remediation-recommendations) <br>
+ - **📍[Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)** <br>
+ - [Analysis Methodology](#analysis-methodology) <br>
+ - [Key Findings](#key-findings) <br>
+ - [Security Monitoring Observations](#security-monitoring-observations) <br>
+ - [Recommendations](#recommendations) <br>
+ - **📍[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#phase-3-incident-investigation-and-indicators-of-compromise-analysis)**
 
 
 # Executive Summary
