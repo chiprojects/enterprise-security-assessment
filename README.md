@@ -489,3 +489,58 @@ The investigation focused on analyzing forensic artifacts provided by the organi
 | `access-2.log`|  Web server access logs
 | NextTechartifact.pcap |  Packet capture containing network traffic 
 
+These artifacts were analyzed to determine:
+
+- If attackers interacted with the web server
+- If malicious payloads were transmitted
+- If vulnerabilities were actively exploited
+
+### Investigation Methodology
+
+The investigation followed a standard digital forensics workflow aligned with NIST SP 800-86 incident response methodology.
+
+Key phases included: 
+
+```
+Evidence Identification
+Evidence Preservation
+Artifact Analysis
+Indicator of Compromise Identification
+Incident Documentation
+```
+
+Analysis techniques included:
+
+- log parsing
+- data packet inspection
+- HTTP request analysis
+- artifact correlation
+
+### Tools Used
+
+| Tool | Purpose
+| -------- | ------- 
+| Wireshark |  Network traffic analysis
+| Linux command-line tools | Log parsing
+| grep/cat |  Searching for patterns in suspicious activity  
+| Manual artifact review | Investigation of suspicious activity
+
+### Key Indicators of Compromised Discovered
+
+The investigation uncovered multiple indicators consistent with attacker reconnaissance and exploitation attempts
+
+#### ⚠️Suspicious Proxy Testing Activity
+
+Source IP: 
+
+`185.49.14.190`
+
+The IP address accessed the endpoint:
+
+`/testproxy.php`
+
+⚠️ `This file is commonly used to test open proxy functionality and may indicate an attempt to determine whether the server could be leveraged as a proxy for anonymized traffic.`
+
+
+
+
