@@ -547,4 +547,23 @@ Source IP:
 
 `61.161.130.241`
 
+The attacker attempted to exploit the Shellshock vulnerability via malicious HTTP headers.
+
+Shellshock is a critical vulnerability in the Bash shell that allows attackers to execute arbitrary commands remotely.
+
+Evidence of this activity was identified in the following artifacts:
+
+- HTTP access logs
+- network packet capture data
+
+#### ⚠️ Suspicious File Upload Activity
+
+Network traffic analysis of the packet capture file revealed a POST request uploading multiple files.
+
+Observed artifact:
+
+`/osk//1-7.jpg`
+
+While the files appeared to be image files, attackers often disguise malicious payloads as benign file types.
+
 
