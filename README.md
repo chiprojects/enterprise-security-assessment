@@ -422,6 +422,8 @@ Several indicators suggest that the system may be targeted by automated scanning
 
 These system patterns are consistent with attacker behavior observed during reconnaissance and vulnerability scanning.
 
+#
+
 ### Security Monitoring Observations
 
 The assessment revealed that NextTech is capable of collecting log data; however, it lacks the tooling required to actively monitor or provide alerts on suspicious activity. 
@@ -479,6 +481,8 @@ These events raised concerns that the organization may have experienced a securi
 
 The objective of this phase was to conduct a preliminary digital forensics investigation to determine whether indicators of compromise (IoCs) could be identified within the organization's IT infrastructure.
 
+#
+
 ### Investigation Scope
 
 The investigation focused on analyzing forensic artifacts provided by the organization.
@@ -494,6 +498,8 @@ These artifacts were analyzed to determine:
 - If attackers interacted with the web server
 - If malicious payloads were transmitted
 - If vulnerabilities were actively exploited
+
+#
 
 ### Investigation Methodology
 
@@ -516,6 +522,8 @@ Analysis techniques included:
 - HTTP request analysis
 - artifact correlation
 
+#
+
 ### Tools Used
 
 | Tool | Purpose
@@ -524,6 +532,8 @@ Analysis techniques included:
 | Linux command-line tools | Log parsing
 | grep/cat |  Searching for patterns in suspicious activity  
 | Manual artifact review | Investigation of suspicious activity
+
+#
 
 ### Key Indicators of Compromised Discovered
 
@@ -572,6 +582,8 @@ The activity suggests potential malicious file upload attempts, which may be use
 - command execution
 - persistence techniques
 
+#
+
 ### Correlated Evidence
 
 Analysis confirmed correlations between the web server access logs and the network packet capture data.
@@ -584,6 +596,8 @@ Indicators observed across multiple artifacts included:
 - file upload behavior
 
 The correlation strengthens the likelihood that an attacker was actively interacting with the system.
+
+#
 
 ### Likely Attack Scenario
 
@@ -598,6 +612,8 @@ Based on the forensic artifacts analyzed, the likely attack sequence was:
 
 These activities align with common attacker behavior observed during web server exploitation campaigns.
 
+#
+
 ### Security Weaknesses Identified
 
 The investigation identified several security gaps that may have enabled the activity observed:
@@ -606,6 +622,8 @@ The investigation identified several security gaps that may have enabled the act
 - insufficient detection of exploit attempts
 - lack of web application firewall protections
 - limited real-time monitoring capabilities
+
+#
 
 ### Recommendations
 
