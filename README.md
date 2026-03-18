@@ -29,6 +29,12 @@ This assessment was conducted within an authorized simulated enterprise environm
  - [Security Monitoring Observations](#security-monitoring-observations) <br>
  - [Recommendations](#recommendations) <br>
  - **📍[Phase 3: Incident Investigation and Indicators of Compromise (IoC) Analysis](#phase-3-incident-investigation-and-indicators-of-compromise-analysis)**
+ - [Investigation Scope](#investigation-scope) <br>
+ - [Investigation Methodology](#investigation-methodology) <br>
+ - [Key Indicators of Compromise](#key-indicators-of-compromised-discovered) <br>
+ - [Likely Attack Scenario](#likely-attack-scenario) <br>
+ - [Recommendations](#recommendations-(post-investigation)) <br>
+
 
 
 # Executive Summary
@@ -625,7 +631,7 @@ The investigation identified several security gaps that may have enabled the act
 
 #
 
-### Recommendations
+### Recommendations (Post-Investigation)
 
 To reduce the likelihood of future compromises, the following security improvements are recommended:
 
