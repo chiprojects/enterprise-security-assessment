@@ -564,6 +564,80 @@ Observed artifact:
 
 `/osk//1-7.jpg`
 
-While the files appeared to be image files, attackers often disguise malicious payloads as benign file types.
+Although the files appeared to be images, attackers often disguise malicious payloads as benign file types.
+
+The activity suggests potential malicious file upload attempts, which may be used for the following: 
+
+- web shell deployment
+- command execution
+- persistence techniques
+
+### Correlated Evidence
+
+Analysis confirmed correlations between the web server access logs and the network packet capture data.
+
+Indicators observed across multiple artifacts included:
+
+- suspicious external IP addresses
+- exploit signatures
+- abnormal HTTP requests
+- file upload behavior
+
+The correlation strengthens the likelihood that an attacker was actively interacting with the system.
+
+### Likely Attack Scenario
+
+Based on the forensic artifacts analyzed, the likely attack sequence was:
+
+```
+1. External reconnaissance activity targeting the web server
+2. Exploitation attempts against known vulnerabilities (Shellshock) 
+3. Attempts to upload malicious payloads
+4. Potential command execution or persistence attempts
+```
+
+These activities align with common attacker behavior observed during web server exploitation campaigns.
+
+### Security Weaknesses Identified
+
+The investigation identified several security gaps that may have enabled the activity observed:
+
+- vulnerable services exposed to the internet
+- insufficient detection of exploit attempts
+- lack of web application firewall protections
+- limited real-time monitoring capabilities
+
+### Recommendations
+
+To reduce the likelihood of future compromises, the following security improvements are recommended:
+
+#### 📌Patch Vulnerable Systems
+
+Ensure all systems vulnerable to Shellshock and other known vulnerabilities are patched immediately.
+
+#### 📌Implement Security Monitoring
+
+Deploy centralized monitoring capabilities to detect suspicious activity, such as:
+
+- repeated exploit attempts
+- suspicious IP addresses
+- abnormal HTTP requests
+
+#### 📌Deploy Web Application Firewall (WAF)
+
+A WAF would help detect and block:
+
+- malicious HTTP headers
+- command injection attempts
+- abnormal payloads
+
+#### 📌Implement Network Segmentation
+
+Restrict communication between network segments to reduce attacker movement within the environment.
+
+#### 📌Improve Security Awareness
+
+Provide employee training on identifying suspicious system behavior and reporting incidents.
+
 
 
