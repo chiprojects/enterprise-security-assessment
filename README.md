@@ -1,20 +1,22 @@
 # Enterprise Security Assessment- Financial Services Environment 
 
-As an external cybersecurity consultant, I was hired to evaluate the network exposure, vulnerability posture, and monitoring capabilities of a regional financial institution: NextTech, operating within a Windows/Linux enterprise environment.
+As an external cybersecurity consultant, I conducted a comprehensive security assessment for NextTech, a regional financial institution operating in a Windows/Linux enterprise environment.
 
-The objective of this engagement was to:
+This engagement evaluated the organization's attack surface, vulnerability posture, and detection capabilities across its internal infrastructure.
+
+# Engagement Objectives
 
 - **Identify exposed services and network attack surfaces**
 
-- **Conduct credentialed vulnerability scanning**
+- **Perform credentialed vulnerability assessments**
 
-- **Analyze vulnerabilities using CVSS risk scoring**
+- **Prioritize risk using CVSS-based scoring**
 
-- **Evaluate security monitoring capabilities**
+- **Evaluate security monitoring and detection capabilities**
 
-- **Provide risk-based remediation guidance**
+- **Deliver actionable, risk-based remediation strategies**
 
-This assessment was conducted within an authorized simulated enterprise environment designed to mirror real-world financial sector infrastructure.
+This assessment was conducted in an authorized simulated enterprise environment designed to reflect real-world financial-sector infrastructure.
 
 # Table of Contents
 
@@ -41,6 +43,8 @@ This assessment was conducted within an authorized simulated enterprise environm
 
 A vulnerability assessment was conducted against the internal network `10.11.152.0/24` to evaluate the organization's security posture and identify exploitable weaknesses.
 
+# Key Findings
+
 Network enumeration identified 2 active hosts, with one host exposing remote access services, including **SSH(TCP port 22)** and **RDP(TCP port 3389).**
 
 Credentialed vulnerability scanning identified **127 vulnerabilities,** including: 
@@ -50,7 +54,11 @@ Credentialed vulnerability scanning identified **127 vulnerabilities,** includin
 - 🟠19 Medium
 - 🟡1 Low
 
+# Critical Risk Areas
+
 The most severe findings included **Apache Log4j Remote Code Execution vulnerabilities**, outdated **OpenJDK installations**, and weak **SSL/TLS configurations.**
+
+# Business Impact
 
 <ins>These vulnerabilities present a high risk of:</ins>
 
@@ -61,6 +69,8 @@ The most severe findings included **Apache Log4j Remote Code Execution vulnerabi
 - Lateral movement within the network
 
 - Unauthorized system access
+
+# Recommendation Summary
 
 Immediate remediation was recommended for all **critical** and **high-severity vulnerabilities**, particularly those affecting publicly exposed services.
 
