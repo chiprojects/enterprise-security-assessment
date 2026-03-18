@@ -21,8 +21,8 @@ This assessment was conducted in an authorized simulated enterprise environment 
 # Table of Contents
 
  - [Executive Summary](#executive-summary) <br>
- - [Assessment Methodology](#assessment-methodology) <br>
  - **📍[Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)** <br>
+ - [Assessment Methodology](#assessment-methodology) <br>
  - [Risk Priorization](#risk-priorization) <br>
  - [Remediation Recommendations](#remediation-recommendations) <br>
  - **📍[Phase 2: Security Monitoring and Log Analysis](#phase-2-security-monitoring-and-log-analysis)** <br>
@@ -43,7 +43,7 @@ This assessment was conducted in an authorized simulated enterprise environment 
 
 A vulnerability assessment was conducted against the internal network `10.11.152.0/24` to evaluate the organization's security posture and identify exploitable weaknesses.
 
-# Key Findings
+### Key Findings
 
 Network enumeration identified 2 active hosts, with one host exposing remote access services, including **SSH(TCP port 22)** and **RDP(TCP port 3389).**
 
@@ -54,11 +54,11 @@ Credentialed vulnerability scanning identified **127 vulnerabilities,** includin
 - 🟠19 Medium
 - 🟡1 Low
 
-# Critical Risk Areas
+### Critical Risk Areas
 
 The most severe findings included **Apache Log4j Remote Code Execution vulnerabilities**, outdated **OpenJDK installations**, and weak **SSL/TLS configurations.**
 
-# Business Impact
+### Business Impact
 
 <ins>These vulnerabilities present a high risk of:</ins>
 
@@ -70,11 +70,13 @@ The most severe findings included **Apache Log4j Remote Code Execution vulnerabi
 
 - Unauthorized system access
 
-# Recommendation Summary
+### Recommendation Summary
 
 Immediate remediation was recommended for all **critical** and **high-severity vulnerabilities**, particularly those affecting publicly exposed services.
 
-# Assessment Methodology
+# 📍Phase 1: Vulnerability Assessment 
+
+### Assessment Methodology
 
 The assessment methodology followed guidance from:
 
@@ -125,8 +127,6 @@ Findings were evaluated using:
 - Nmap
 - Nessus Essentials
 - Kali Linux
-
-# 📍Phase 1: Vulnerability Assessment 
 
 <ins>**Network Enumeration (Nmap Findings)**</ins>
 
