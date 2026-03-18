@@ -33,7 +33,7 @@ This assessment was conducted within an authorized simulated enterprise environm
  - [Investigation Methodology](#investigation-methodology) <br>
  - [Key Indicators of Compromise](#key-indicators-of-compromised-discovered) <br>
  - [Likely Attack Scenario](#likely-attack-scenario) <br>
- - [Recommendations](#recommendations-(post-investigation)) <br>
+ - [Recommendations](#recommendations-post-investigation) <br>
 
 
 
