@@ -1,6 +1,16 @@
 # Enterprise Security Assessment- Financial Services Environment 
 
-As an external cybersecurity consultant, I conducted a comprehensive security assessment for NextTech, a regional financial institution operating in a Windows/Linux enterprise environment.
+As an external cybersecurity consultant, I conducted a multi-phase security assessment of a financial services environment, NextTech, to evaluate its exposure, detection capabilities, and overall security posture. 
+This engagement included: 
+```
+Phase 1 - Vulnerability Assessment
+Phase 2: Security Monitoring & Log Analysis
+Phase 3: Incident Investigation & IoC Analysis
+Phase 4: Security Control Architecture Design
+
+```
+
+comprehensive security assessment for NextTech, a regional financial institution operating in a Windows/Linux enterprise environment.
 
 This engagement evaluated the organization's attack surface, vulnerability posture, and detection capabilities across its internal infrastructure.
 
@@ -674,4 +684,177 @@ Restrict communication between network segments to reduce attacker movement with
 Provide employee training on identifying suspicious system behavior and reporting incidents.
 
 
+# 📍Phase 4: Security Control Architecture Design
 
+### Engagement Objective
+
+Following the identification of: 
+
+- critical vulnerabilities (Phase 1)
+- monitoring gaps (Phase 2)
+- confirmed indicators of compromise (Phase 3)
+
+NextTech requested the design of a technical security control architecture to strengthen its overall security posture while maintaining compliance with financial industry standards.
+
+The objective of this phase was to: 
+
+- design security controls aligned to real threats observed
+- map controls to NIST SP 800-53 Rev.5 and PCI DSS v4.0
+- define implementation and validation strategies
+- improve security across access, network, and application layers
+
+### Network Architecture Overview
+
+The environment consists of: 
+
+- Core infrastructure: Domain Controller, Exchange, DNS, VoIP, ESXi
+- Segmented VLAN architecture
+- Backup systems
+- User endpoints (office workstations)
+- Retail/POS devices (VLAN 4)
+- Internet-facing services (web server)
+
+This architecture introduces risk across multiple trust boundaries, particularly:
+- internet -> internal network
+- VLAN to VLAN communications
+- web-facing applications
+
+### Control Design Strategy 
+
+Security controls were designed using a risk-based approach, directly mapped to: 
+
+- monitoring gaps (lack of SIEM, alerting)
+- attacker behavior (Shellshock, file uploads, tunneling)
+- vulnerabilities identified (Log4j, OpenSSH, RDP exposure)
+
+Controls were grouped into: 
+
+```
+1. Access Control
+2. Network Security
+3. Application Security 
+4. Detection & Monitoring
+5. Foundational Security Controls
+```
+
+
+### 1. Access Control Architecture
+
+#### Risk Identified
+- exposed RDP (port 3389)
+- lack of MFA
+- weak credential controls
+
+#### Controls Implemented
+
+- Multi-Factor Authentication (MFA) for all privileged access
+- Role-Based Access Control (RBAC) enforcing least privilege
+- Privileged Access Management (PAM) for credential rotation
+- Centralized audit logging for authentication events
+
+#### Why This Matters
+These controls directly mitigate:
+- brute-force attacks
+- credential theft
+- unauthorized administrative access
+
+#### NIST Mapping
+
+` AC-2, AC-6, AC-7, IA-2, AU-2, AU-6`
+
+#
+
+
+### 2. Network Security Architecture
+
+#### Risk Identified
+- lateral movement between VLANs
+- HTTP tunneling activity
+- malicious external IP interaction
+
+#### Controls Implemented
+
+- VLAN segmentation with strict firewall ACLs
+- Isolation of POS systems (VLAN 4) from internal servers
+- IDS/IPS deployment between network zones
+- Network Access Control (NAC) for endpoint validation
+- IP blocklisting for known malicious sources
+
+#### Why This Matters
+These controls prevent:
+- lateral movement
+- unauthorized access between systems
+- repeated attacker entry
+
+#### NIST Mapping
+
+` SC-7, SI-4, AC-7, AC-17, SC-32`
+
+#
+
+### 3. Application Security Controls
+
+#### Risk Identified
+- Log4j RCE vulnerability
+- Shellshock exploit attempts
+- malicious file upload behavior
+- weak encryption (SHA-1)
+
+#### Controls Implemented
+
+- Web Application Firewall (WAF) for HTTP inspection
+- Patch management program (Log4j, OpenSSH, etc.)
+- Input validation and file upload restrictions
+- TLS hardening (disable SHA-1, enforce modern ciphers)
+
+#### Why This Matters
+These controls directly block: 
+- remote code execution
+- command injection
+- malicious payload delivery
+
+#### NIST Mapping
+
+` SI-2, SC-12, SC-13, SC-28`
+
+#
+
+### 4. Detection & Monitoring Architecture
+
+#### Risk Identified
+- logs collected but not actively monitored
+- no alerting system
+
+#### Controls Implemented
+
+- SIEM deployment for centralized logging
+- real-time alerting for suspicious activity
+- log aggregation across servers, endpoints, and firewalls
+- forensic log retention strategy
+
+#### Why This Matters
+This transforms the environment from:
+
+` Reactive -> Proactive Detection `
+#
+
+### 5. Foundational Security Controls
+
+#### Controls Implemented
+
+- Vulnerability Management Program (continuous Nessus scanning)
+- Backup and recovery strategy
+- Secure configuration baselines (CIS/STIG alignment)
+- compliance alignment with PCI DSS v4.0
+- security awareness training
+
+#### Why This Matters
+These controls ensure:
+- long-term resilience
+- reduced attack surface
+- regulatory compliance
+
+### Control Validation & Testing Strategy
+Each control includes testable validation criteria, which 
+
+` SI-2, SC-12, SC-13, SC-28`
