@@ -49,6 +49,7 @@ This assessment provided a full lifecycle view of enterprise security, from iden
 
  - [Executive Summary](#executive-summary) <br>
  - **📍[Phase 1: Vulnerability Assessment](#phase-1-vulnerability-assessment)** <br>
+ - [Engagement Objective](#engagement-objective) <br>
  - [Assessment Methodology](#assessment-methodology) <br>
  - [Risk Priorization](#risk-priorization) <br>
  - [Remediation Recommendations](#remediation-recommendations) <br>
