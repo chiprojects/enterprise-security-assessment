@@ -1,32 +1,49 @@
-# Enterprise Security Assessment- Financial Services Environment 
+# Enterprise Security Assessment - Financial Services Environment 
+
+# Executive Summary
 
 As an external cybersecurity consultant, I conducted a multi-phase security assessment of a financial services environment, NextTech, to evaluate its exposure, detection capabilities, and overall security posture. 
 This engagement included: 
 ```
-Phase 1 - Vulnerability Assessment
+Phase 1: Vulnerability Assessment
 Phase 2: Security Monitoring & Log Analysis
 Phase 3: Incident Investigation & IoC Analysis
 Phase 4: Security Control Architecture Design
 
 ```
+## Key Findings Across the Engagement
+- Critical vulnerabilities identified in externally accessible services, including Apache Log4j RCE
+- Weak encryption configurations and outdated software increased risk of compromise
+- Security monitoring capabilities were limited, with no centralized detection or alerting
+- Log analysis and network traffic revealed active exploitation attempts, including:
+  - Shellshock exploitation attempts
+  - Suspicious HTTP payload delivery via disguised files
+  - CVE-2020-8515 probing activity
+- Indicators of compromise (IOCs) suggested potential post-exploitation activity, including unauthorized file behavior
+- The environment lacked layered security controls, increasing exposure to lateral movement and persistence
 
-comprehensive security assessment for NextTech, a regional financial institution operating in a Windows/Linux enterprise environment.
+## Business Impact
 
-This engagement evaluated the organization's attack surface, vulnerability posture, and detection capabilities across its internal infrastructure.
+The identified weaknesses significantly increase the organization's risk of:
 
-# Engagement Objectives
+- Unauthorized access to internal systems
+- Remote code execution and system compromise
+- Credential theft and privilege escalation
+- Undetected attacker persistence within the environment
 
-- **Identify exposed services and network attack surfaces**
+## Strategic Recommendations
 
-- **Perform credentialed vulnerability assessments**
+To address these risks, a comprehensive security control architecture was designed, including: 
 
-- **Prioritize risk using CVSS-based scoring**
+- Network segmentation and access control enforcement
+- Implementation of SIEM and IDS/IPS for real-time detection
+- Multi-factor authentication (MFA) for privileged access
+- Continuous vulnerability management and patching
+- Encryption hardening aligned with industry standards
 
-- **Evaluate security monitoring and detection capabilities**
+## Outcome 
 
-- **Deliver actionable, risk-based remediation strategies**
-
-This assessment was conducted in an authorized simulated enterprise environment designed to reflect real-world financial-sector infrastructure.
+This assessment provided a full lifecycle view of enterprise security, from identifying vulnerabilities to detecting active threats and designing controls to prevent future compromise.
 
 # Table of Contents
 
@@ -46,45 +63,26 @@ This assessment was conducted in an authorized simulated enterprise environment 
  - [Key Indicators of Compromise](#key-indicators-of-compromised-discovered) <br>
  - [Likely Attack Scenario](#likely-attack-scenario) <br>
  - [Recommendations](#recommendations-post-investigation) <br>
+ - **📍[Phase 4: Security Control Architecture Design](#phase-4-security-control-architecture-design)**
+ - [Network Architecture Overview](#network-architecture-overview) <br>
+ - [Control Design Strategy](#control-design-strategy) <br>
 
-
-
-# Executive Summary
-
-A vulnerability assessment was conducted against the internal network `10.11.152.0/24` to evaluate the organization's security posture and identify exploitable weaknesses.
-
-### Key Findings
-
-Network enumeration identified 2 active hosts, with one host exposing remote access services, including **SSH(TCP port 22)** and **RDP(TCP port 3389).**
-
-Credentialed vulnerability scanning identified **127 vulnerabilities,** including: 
-
-- 🔴4 Critical
-- ⭕10 High
-- 🟠19 Medium
-- 🟡1 Low
-
-### Critical Risk Areas
-
-The most severe findings included **Apache Log4j Remote Code Execution vulnerabilities**, outdated **OpenJDK installations**, and weak **SSL/TLS configurations.**
-
-### Business Impact
-
-<ins>These vulnerabilities present a high risk of:</ins>
-
-- Credential interception
-
-- Remote code execution
-
-- Lateral movement within the network
-
-- Unauthorized system access
-
-### Recommendation Summary
-
-Immediate remediation was recommended for all **critical** and **high-severity vulnerabilities**, particularly those affecting publicly exposed services.
 
 # 📍Phase 1: Vulnerability Assessment 
+
+### Engagement Objective
+
+As part of the initial engagement, NextTech requested an assessment of its internal network to identify potential security weaknesses and areas of exposure.
+
+The objective of this phase was to: 
+
+- Identify exposed services and network attack surfaces across the internal environment
+- Perform network enumeration to discover active hosts and accessible services
+- Conduct credentialed vulnerability scanning to identify known security vulnerabilities
+- Evaluate vulnerabilities using CVSS-based risk scoring and severity classification
+- Assess the organization's overall vulnerability posture and exposure risk
+
+Network and host-based scanning techniques were used to identify misconfigurations, exploitable vulnerabilities, and outdated software within the target subnet.
 
 ### Assessment Methodology
 
@@ -854,7 +852,3 @@ These controls ensure:
 - reduced attack surface
 - regulatory compliance
 
-### Control Validation & Testing Strategy
-Each control includes testable validation criteria, which 
-
-` SI-2, SC-12, SC-13, SC-28`
